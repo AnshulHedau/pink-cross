@@ -1,0 +1,8 @@
+autocorrect==0.3.0
+beautifulsoup4==4.6.0
+Flask==0.12.2
+gunicorn==19.7.1
+Jinja2==2.10
+nltk==3.2.5
+Pyrebase==3.0.27
+requests==2.18.4
