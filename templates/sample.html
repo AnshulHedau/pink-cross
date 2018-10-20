@@ -44,11 +44,11 @@
     <!-- Card -->
     <script>
       var counts = {{test|tojson}};
-      for each(var element in counts)
+      for(var i =0;i<element.length ;i++)
       {
-          for each(var offer_item in element)
+          for (var j =0;j<element[i].length ;j++)
           {
-              console.log(offer_item);
+              console.log(element[i][j]);
           }
       }
       console.log(counts);
