@@ -39,7 +39,7 @@
           'Baskin Robin':'Flat 10% Discount upto Rs100',
           'Meru':'Off of 50% on First Ride',
           'OTS':'Upto 50% Off on Two First rides',
-          'V Mart':'V Mega Mart Offers: Flat 50% Off on Fashion',
+          'V-Mart':'V Mega Mart Offers: Flat 50% Off on Fashion',
           'Dominos':'20% Off on Regular Pizzas above 200',
           'Maxx':'Upto 20% Off on Fashion',
           'Adidas':'Upto 40% Discount on Footwears',
@@ -50,11 +50,12 @@
       var div_element ="";
       for(var i =0;i<counts.length ;i++)
       {
-          div_element += '<div class="col-3"><div class="card"><div class="card-body"><h4 class="card-title">Offer Combo '+i+'</h4><p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p> <a href="#" class="btn btn-primary">Button</a></div></div></div>'
+          div_element += '<div class="col-6"><div class="card"><div class="card-body"><h4 class="card-title">Offer Combo '+i+1+'</h4>';
           for (var j =0;j<counts[i].length ;j++)
           {
-              console.log(offers[counts[i][j]]);
+              div_element += '<p class="card-text">+offers[counts[i][j]]</p>';
           }
+          div_element += '<a href="#" class="btn btn-primary">See Offers in Details</a></div></div></div>';
       }
       document.getElementById('div_element').innerHTML = div_element;
     </script>
