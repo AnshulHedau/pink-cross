@@ -21,10 +21,12 @@ app = Flask(__name__)
 # Index page
 @app.route("/")
 def index():
-    return_value = {"message": "Welcome to the Notify-IPL API!"}
-    json_string = json.dumps(return_value)
-    return json_string
+    return render_template("index.html")
 
+# Index page
+@app.route("/login")
+def index():
+    return render_template("login.html")
 
 # Notification page
 @app.route("/offer")
