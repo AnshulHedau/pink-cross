@@ -44,11 +44,11 @@
     <!-- Card -->
     <script>
       var counts = {{test|tojson}};
-      for(var i =0;i<element.length ;i++)
+      for(var i =0;i<counts.length ;i++)
       {
-          for (var j =0;j<element[i].length ;j++)
+          for (var j =0;j<counts[i].length ;j++)
           {
-              console.log(element[i][j]);
+              console.log(counts[i][j]);
           }
       }
       console.log(counts);
