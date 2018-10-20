@@ -69,7 +69,7 @@ def noti():
     for item in (frequent_itemsets[ (frequent_itemsets['length'] > 2) &
                    (frequent_itemsets['support'] >= 0.035) ]['itemsets']):
         print(list(item))
-    return (item)
+    return ("item")
 
 
 # Help page
