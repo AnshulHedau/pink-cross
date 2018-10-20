@@ -17,24 +17,17 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.12/js/mdb.min.js"></script>
   </head>
   <body>
-    <!--Navbar-->
-    <nav class="navbar navbar-dark default-color">
-      <form class="form-inline my-2 my-lg-0 ml-auto">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-      </form>
+    <nav class="navbar navbar-dark default-color justify-content-between" style="background-color: #263238;padding: 15px">
+      <div class="button_header_logo" style="margin: 2px 20px;float:left">
+        <span style="font-size: 20px;color: white;padding:50px 20px;font-family: 'Charmonman', cursive;"><b>Flying Panda</b></span>
+      </div>
+      <div class="btn btn-outline-white btn-sm my-0">
+        <span style="background-color: transparent;color: white;padding-right: 20px">Welcome, Anshul</span>
+        <button style="background-color: transparent;color: white;border: 1px solid white" type="submit">Logout</button>
+      </div>
     </nav>
-    <!--/.Navbar-->
     <div class="container">
       <div class="row justify-content-md-center" id="div_element">
-      </div>
-      <div class="row">
-        <div class="col-8">
-          col-8
-        </div>
-        <div class="col-4">
-          col-4
-        </div>
       </div>
     </div>
     <script>
@@ -58,12 +51,12 @@
       var div_element ="";
       for(var i =0;i<counts.length ;i++)
       {
-          div_element += '<div class="col-6"><div class="card"><div class="card-body"><h4 class="card-title">Offer Combo '+(i+1)+'</h4>';
+          div_element += '<div class="col-6"><div class="card" style="margin: 5px"><div class="container"> <div class="card-body"><h4 class="card-title">Offer Combo '+(i+1)+'</h4>';
           for (var j =0;j<counts[i].length ;j++)
           {
               div_element += '<p class="card-text"><b>'+counts[i][j]+'</b> : '+offers[counts[i][j]]+'</p>';
           }
-          div_element += '<a href="#" class="btn btn-primary">See Offers in Details</a></div></div></div>';
+          div_element += '<a href="#" class="btn btn-primary">See Offers in Details</a></div></div></div></div>';
       }
       document.getElementById('div_element').innerHTML = div_element;
     </script>
