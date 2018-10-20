@@ -17,42 +17,25 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.12/js/mdb.min.js"></script>
   </head>
   <body>
-    <!-- Card -->
-    <div class="card">
+    <div class="container">
+      <div class="row">
+        <div id="div_element">
 
-      <!-- Card image -->
-      <div class="view overlay">
-        <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
-        <a href="#!">
-          <div class="mask rgba-white-slight"></div>
-        </a>
+        </div>
       </div>
-
-      <!-- Card content -->
-      <div class="card-body">
-
-        <!-- Title -->
-        <h4 class="card-title">Card title</h4>
-        <!-- Text -->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <!-- Button -->
-        <a href="#" class="btn btn-primary">Button</a>
-
-      </div>
-
     </div>
-    <!-- Card -->
     <script>
       var counts = {{test|safe}};
       //counts = [["Uber", "Ola", "Maxx"], ["Adidas", "Meru", "Maxx"], ["Uber", "Adidas", "V-Mart"], ["Uber", "V-Mart", "Ola"], ["V-Mart", "Ola", "Maxx"], ["Uber", "Adidas", "Reliance"], ["Uber", "Adidas", "Spice Jet"], ["Meru", "V-Mart", "Maxx"], ["Uber", "Spice Jet", "V-Mart"], ["Uber", "Ola", "Reliance"], ["Uber", "Subway", "Maxx"], ["Adidas", "Subway", "Maxx"], ["Uber", "V-Mart", "Maxx"], ["Uber", "Meru", "Maxx"], ["Reliance", "Meru", "Baskin Robins"], ["Uber", "V-Mart", "OTS"], ["Baskin Robins", "Meru", "Indigo"], ["Uber", "V-Mart", "Reliance"], ["Uber", "Subway", "Reliance"], ["Uber", "Adidas", "Meru"], ["Spice Jet", "Subway", "Ola"], ["Reliance", "Spice Jet", "Ola"], ["Uber", "Meru", "V-Mart"], ["Subway", "Ola", "Maxx"], ["Uber", "Meru", "Subway"], ["Meru", "Spice Jet", "Reliance"], ["Reliance", "Meru", "OTS"], ["Uber", "Subway", "Air India"], ["Meru", "Subway", "Baskin Robins"], ["Dominos", "Spice Jet", "V-Mart"], ["Meru", "Subway", "Maxx"], ["Uber", "V-Mart", "Subway"]]
       for(var i =0;i<counts.length ;i++)
       {
+          var div_element = '<div class="col-md-3"><div class="card"><div class="card-body"><h4 class="card-title">Card title</h4><p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p> <a href="#" class="btn btn-primary">Button</a></div></div></div>'
           for (var j =0;j<counts[i].length ;j++)
           {
               console.log(counts[i][j]);
           }
+          document.getElementById('div_element').innerHTML = div_element;
       }
-      console.log(counts.getClass().getName());
     </script>
   </body>
 </html>
