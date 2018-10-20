@@ -71,7 +71,7 @@ def noti():
                    (frequent_itemsets['support'] >= 0.035) ].sort_values('support',ascending=False)['itemsets']):
         print(list(item))
         final_offers.append(list(item))
-    return json.dumps(final_offers)
+    return render_template("sample.html",test = json.dumps(final_offers))
 
 
 # Help page
