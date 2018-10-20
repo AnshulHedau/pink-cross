@@ -30,8 +30,8 @@
       </div>
     </div>
     <script>
-      var offers = {'Ola':'Ola Offers: Flat Get Rs 50 off on first 3 Micro, Mini, Prime, Prime Play, Prime SUV, Prime Exec rides',
-          'Uber':'Uber Coupons: Upto Rs 1500 Code (Flat 15% Paytm Cash on UBER Gift Cards)',
+      var offers = {'Ola':'Ola Offers: Flat Get Rs 50 off on first 3 rides',
+          'Uber':'Uber Coupons: Upto Rs 1500 Code ',
           'Spice Jet':'SpiceJet Offers: Upto Rs 15000 Off International Flights',
           'Air India':'AirIndia Coupons: Upto Rs 15000 Off International Flights + Upto Rs 100 CashKaro Cashback',
           'Subway':'Subway Offers Today: Buy 2 Get 1 Subway',
@@ -53,7 +53,7 @@
           div_element += '<div class="col-6"><div class="card"><div class="card-body"><h4 class="card-title">Offer Combo '+(i+1)+'</h4>';
           for (var j =0;j<counts[i].length ;j++)
           {
-              div_element += '<p class="card-text"><b>'+counts[i][j]+'</b>'+offers[counts[i][j]]+'</p>';
+              div_element += '<p class="card-text"><b>'+counts[i][j]+'</b> : '+offers[counts[i][j]]+'</p>';
           }
           div_element += '<a href="#" class="btn btn-primary">See Offers in Details</a></div></div></div>';
       }
