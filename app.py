@@ -29,7 +29,7 @@ def login():
     return render_template("login.html")
 
 # Notification page
-@app.route("/offer")
+@app.route("/login/offer")
 def offer():
     # Firebase configuration
     config = {
