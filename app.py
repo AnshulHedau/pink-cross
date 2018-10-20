@@ -1,5 +1,5 @@
 # Initial setup
-from flask import Flask, request, redirect, url_for,json
+from flask import Flask, request, redirect, url_for,render_template,json
 
 import json
 import requests
