@@ -66,10 +66,12 @@ def noti():
     df = pd.DataFrame(te_ary, columns=te.columns_)
     frequent_itemsets = apriori(df, min_support=0.035, use_colnames=True)
     frequent_itemsets['length'] = frequent_itemsets['itemsets'].apply(lambda x: len(x))
+    final_offers = []
     for item in (frequent_itemsets[ (frequent_itemsets['length'] > 2) &
-                   (frequent_itemsets['support'] >= 0.035) ]['itemsets']):
+                   (frequent_itemsets['support'] >= 0.035) ].sort_values('support',ascending=False)['itemsets']):
         print(list(item))
-    return json.dumps(item)
+        final_offers.append(list(item))
+    return json.dumps(final_offers)
 
 
 # Help page
