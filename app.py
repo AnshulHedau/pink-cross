@@ -61,7 +61,6 @@ def noti():
             if(len(line)>2):
                 lines.append(list(line))     
             line = [item]
-    print(lines)
     te = TransactionEncoder()
     te_ary = te.fit(lines).transform(lines)
     df = pd.DataFrame(te_ary, columns=te.columns_)
@@ -70,7 +69,7 @@ def noti():
     for item in (frequent_itemsets[ (frequent_itemsets['length'] > 2) &
                    (frequent_itemsets['support'] >= 0.035) ]['itemsets']):
         print(list(item))
-    return ("item")
+    return json.dumps(item)
 
 
 # Help page
