@@ -46,6 +46,7 @@ def noti():
         for item in user.val():
             old_timestamp = 0
             #print(item)  
+            line = []
             for timestmp in user.val()[item]:
                 if(int(timestmp)-old_timestamp > 200000):
                     #print(timestmp)
