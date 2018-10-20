@@ -30,15 +30,30 @@
       </div>
     </div>
     <script>
+      var offers = {'Ola':'Ola Offers: Flat Get Rs 50 off on first 3 Micro, Mini, Prime, Prime Play, Prime SUV, Prime Exec rides',
+          'Uber':'Uber Coupons: Upto Rs 1500 Code (Flat 15% Paytm Cash on UBER Gift Cards)',
+          'Spice Jet':'SpiceJet Offers: Upto Rs 15000 Off International Flights',
+          'Air India':'AirIndia Coupons: Upto Rs 15000 Off International Flights + Upto Rs 100 CashKaro Cashback',
+          'Subway':'Subway Offers Today: Buy 2 Get 1 Subway',
+          'Reliance':'Reliance Trends Offer: Flat Rs 500 Off Code',
+          'Baskin Robin':'Flat 10% Discount upto Rs100',
+          'Meru':'Off of 50% on First Ride',
+          'OTS':'Upto 50% Off on Two First rides',
+          'V Mart':'V Mega Mart Offers: Flat 50% Off on Fashion',
+          'Dominos':'20% Off on Regular Pizzas above 200',
+          'Maxx':'Upto 20% Off on Fashion',
+          'Adidas':'Upto 40% Discount on Footwears',
+          'Indigo':'Indigo Offers: Upto Rs 1000 Off International Flights',
+          'McD':'Get Coke free with every meal above 150'};
       var counts = {{test|safe}};
       //counts = [["Uber", "Ola", "Maxx"], ["Adidas", "Meru", "Maxx"], ["Uber", "Adidas", "V-Mart"], ["Uber", "V-Mart", "Ola"], ["V-Mart", "Ola", "Maxx"], ["Uber", "Adidas", "Reliance"], ["Uber", "Adidas", "Spice Jet"], ["Meru", "V-Mart", "Maxx"], ["Uber", "Spice Jet", "V-Mart"], ["Uber", "Ola", "Reliance"], ["Uber", "Subway", "Maxx"], ["Adidas", "Subway", "Maxx"], ["Uber", "V-Mart", "Maxx"], ["Uber", "Meru", "Maxx"], ["Reliance", "Meru", "Baskin Robins"], ["Uber", "V-Mart", "OTS"], ["Baskin Robins", "Meru", "Indigo"], ["Uber", "V-Mart", "Reliance"], ["Uber", "Subway", "Reliance"], ["Uber", "Adidas", "Meru"], ["Spice Jet", "Subway", "Ola"], ["Reliance", "Spice Jet", "Ola"], ["Uber", "Meru", "V-Mart"], ["Subway", "Ola", "Maxx"], ["Uber", "Meru", "Subway"], ["Meru", "Spice Jet", "Reliance"], ["Reliance", "Meru", "OTS"], ["Uber", "Subway", "Air India"], ["Meru", "Subway", "Baskin Robins"], ["Dominos", "Spice Jet", "V-Mart"], ["Meru", "Subway", "Maxx"], ["Uber", "V-Mart", "Subway"]]
       var div_element ="";
       for(var i =0;i<counts.length ;i++)
       {
-          div_element += '<div class="col-3"><div class="card"><div class="card-body"><h4 class="card-title">Card title</h4><p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p> <a href="#" class="btn btn-primary">Button</a></div></div></div>'
+          div_element += '<div class="col-3"><div class="card"><div class="card-body"><h4 class="card-title">Offer Combo '+i+'</h4><p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p> <a href="#" class="btn btn-primary">Button</a></div></div></div>'
           for (var j =0;j<counts[i].length ;j++)
           {
-              console.log(counts[i][j]);
+              console.log(offers[counts[i][j]]);
           }
       }
       document.getElementById('div_element').innerHTML = div_element;
