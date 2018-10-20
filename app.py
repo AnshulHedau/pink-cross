@@ -25,12 +25,12 @@ def index():
 
 # Index page
 @app.route("/login")
-def index():
+def login():
     return render_template("login.html")
 
 # Notification page
 @app.route("/offer")
-def noti():
+def offer():
     # Firebase configuration
     config = {
         "apiKey": "AIzaSyDDVJIFHI-xXAb2CNgjHWU5VTbTwTCcLMs",
