@@ -12,6 +12,7 @@ import cv2
 import argparse
 import sys
 import time
+import json
 
 import numpy as np
 import tensorflow as tf
@@ -72,7 +73,8 @@ def upload():
         filename = photos.save(request.files['photo'])
         file_name = "static/img/"+filename
         score = upload1(file_name)
-        return score
+        print(score)
+        return render_template("report.html",test = json.dumps(score))
     return render_template('upload.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -94,11 +96,16 @@ def upload1(file_name):
     print('\nEvaluation time (1-image): {:.3f}s\n'.format(end-start))
     template = "{} (score={:0.5f})"
     scores = ""
+    scores_array = []
     for i in top_k:
+        score_array = []
+        score_array.append(labels[i])
+        score_array.append(results[i].astype('str'))
+        scores_array.append(score_array)
         print(template.format(labels[i], results[i]))
         scores += template.format(labels[i], results[i])+"\n"
 
-    return scores
+    return scores_array
 
     
     

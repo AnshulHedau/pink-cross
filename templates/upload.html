@@ -1,11 +1,77 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Upload</title>
-</head>
-<body>
-<form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
-    <input type=file name=photo>
-    <input type="submit">
-</form>
-</body>
+    <head>
+        <title>Upload</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="detect.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <style>
+            .nav-wrapper
+            {
+              background-color: Black;
+            }
+            p
+            {
+              font-family: muli;
+            }
+            .btn
+            {
+              background-color: black;
+            }
+            .btn:hover {
+                background-color: grey;
+                color: white;
+              }
+            body{
+              background-image: url("https://preview.ibb.co/hG3giL/ht.jpg");
+              background-size: cover;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Skin Cancer detection</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row center">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col l4 s12 m7 offset-l4">
+                    <div class="card medium">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="https://preview.ibb.co/mv3Txf/rsz-isic-0024311.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Let us help you give a basic diagnosis of your skin leison.<i class="material-icons right">more_vert</i></span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <span class="card-title grey-text text-darken-4">Enter image here</span>
+                            <div class="col l2">
+                                <form method=POST enctype=multipart/form-data action="{{ url_for('upload') }}">
+                                        <input type=file name=photo>
+                                        <input type="submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+  </body>
 </html>

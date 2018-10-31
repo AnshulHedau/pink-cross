@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Report</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="detect.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <style>
+            .nav-wrapper
+            {
+              background-color: Black;
+            }
+            p
+            {
+              font-family: muli;
+            }
+            .btn
+            {
+              background-color: black;
+            }
+            .btn:hover {
+                background-color: grey;
+                color: white;
+              }
+            body{
+              background-image: url("https://preview.ibb.co/hG3giL/ht.jpg");
+              background-size: cover;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Skin Cancer detection</a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row center">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col l4 s12 m4 offset-l2">
+                    <div class="card medium">
+                        <div class="card-content">
+                            
+                            <h3><br><br>Benign</h3>
+                            <h5><b><div id="Benign"></div></b></h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col l4 s12 m10">
+                    <div class="card medium">
+                        <div class="card-content">
+                            
+                            <h3><br><br>Malignant</h3>
+                            <h5><b><div id="Malignant"></div></b></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var x = {{test|safe}};
+            console.log(x);
+            var first = parseFloat(x[0][1]);
+            var second = parseFloat(x[1][1]);
+            document.getElementById("Benign").innerHTML = first.toFixed(10)*(100)+"%";
+            document.getElementById("Malignant").innerHTML = second.toFixed(10)*100+"%";
+            console.log(first,second);
+            Highcharts.chart('container', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false
+            },
+            title: {
+                text: 'Report',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 40
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: -50,
+                        style: {
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }
+                    },
+                    startAngle: -90,
+                    endAngle: 90,
+                    center: ['50%', '75%'],
+                    size: '110%'
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                innerSize: '50%',
+                data: [
+                    ['Benign', first],
+                    ['Malignant', second]
+                ]
+            }]
+        });
+
+
+        </script>
+  </body>
+</html>
